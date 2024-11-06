@@ -33,11 +33,11 @@ def update_account(root, account_id, amount, action):
     """
     if account_id in root.accounts:
         account = root.accounts[account_id]
-        if action == 'deposit':
+        if action == 'deposito':
             account.deposit(amount)
             transaction.commit()
             print(f"Se ha depositado {amount} en la cuenta '{account_id}'. Nuevo balance: {account.balance}")
-        elif action == 'withdraw':
+        elif action == 'retiro':
             try:
                 account.cash(amount)
                 transaction.commit()
